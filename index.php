@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corinthians - Página Principal</title>
+    <title>Biblioteca Digital</title>
     <link rel="stylesheet" href="components/topo/topo.css">
     <link rel="stylesheet" href="components/conteudo/conteudo.css">
     <link rel="stylesheet" href="components/menu/menu.css">
