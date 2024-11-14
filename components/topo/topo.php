@@ -6,7 +6,7 @@
         <div class="usuario">
             <ul>
                 <li><a href="#">Login</a></li>
-                <li><a href="#">Cadastro</a></li>
+                <li><a href="?pg=acesso/form-cadastrar">Cadastro</a></li>
             </ul>
         </div>
     </div>
