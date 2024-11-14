@@ -1,8 +1,4 @@
 <footer class="rodape">
-    <div class="container">
-        <p>&copy; 2024 Biblioteca Digital. Todos os direitos reservados.</p>
-        <div class="social">
-            <a href="#">Saiba mais sobre nós</a>
-        </div>
-    </div>
+    <p>&copy; 2024 Biblioteca Digital. Todos os direitos reservados.</p>
+    <a href="#">Saiba mais sobre nós</a>
 </footer>

@@ -1,13 +1,9 @@
-<header class="topo">
-    <div class="container">
-        <div class="logo">
-            <h1><a href="#">Biblioteca Digital</a></h1>
-        </div>
-        <div class="usuario">
-            <ul>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Cadastro</a></li>
-            </ul>
-        </div>
+<div class="topo-biblioteca">
+    <div class="logo">
+        <h1>CineBookly</h1>
     </div>
-</header>
+    <div class="botoes">
+        <button class="botao-login">Login</button>
+        <button class="botao-cadastro">Cadastro</button>
+    </div>
+</div>

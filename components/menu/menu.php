@@ -1,10 +1,8 @@
-<div class="menu">
+<nav class="menu-navegacao">
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Livros</a></li>
-        <li><a href="#">Filmes</a></li>
-        <li><a href="#">Séries</a></li>
+        <li><a href="#">Menu</a></li>
         <li><a href="#">Perfil</a></li>
-        <li><a href="#">Sair</a></li>
+        <li><a href="#">Amizades</a></li>
+        <li><a href="#">Fale Conosco</a></li>
     </ul>
-</div>
+</nav>
