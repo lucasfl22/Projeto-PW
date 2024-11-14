@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Digital</title>
-    <link rel="stylesheet" href="components/topo/topo.css">
-    <link rel="stylesheet" href="components/conteudo/conteudo.css">
-    <link rel="stylesheet" href="components/menu/menu.css">
-    <link rel="stylesheet" href="components/rodape/rodape.css">
-    <link rel="stylesheet" href="components/global.css">
+    <link rel="stylesheet" href="style/topo.css">
+    <link rel="stylesheet" href="style/conteudo.css">
+    <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/rodape.css">
+    <link rel="stylesheet" href="style/global.css">
 </head>
 <body>
     <?php 
