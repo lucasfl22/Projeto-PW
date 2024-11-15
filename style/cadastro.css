@@ -1,0 +1,39 @@
+.form-cadastrar {
+    background-color: #4d2900; /* Cor de fundo */
+    padding: 40px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 400px; /* Largura máxima */
+    margin: 100px auto; /* Centraliza o formulário */
+    text-align: center; /* Centraliza o texto */
+}
+
+.form-cadastrar h1 {
+    font-family: 'Playfair Display', serif; /* Fonte do título */
+    font-size: 36px; /* Tamanho da fonte */
+    color: #FFF8E1; /* Cor do texto */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.form-cadastrar input {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    margin: 10px 0; /* Margem vertical */
+    border: 1px solid #A0522D; /* Borda */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+.form-cadastrar button {
+    background-color: #A0522D; /* Cor do botão */
+    color: #FFF8E1; /* Cor do texto do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+.form-cadastrar button:hover {
+    background-color: #ffcc89; /* Cor do botão ao passar o mouse */
+    color: #A0522D; /* Cor do texto ao passar o mouse */
+}

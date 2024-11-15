@@ -18,7 +18,7 @@
     }
     ?>
     <form action="acesso/cadastro/cadastro.php" method="post">
-        <input type="text" name="nome_usuario" id="nome_usuario" maxlength="50"  placeholder="Nome" required>
+        <input type="text" name="nome_usuario" id="nome_usuario" maxlength="50" placeholder="Nome" required>
         <input type="email" name="email_usuario" id="email_usuario" maxlength="50" placeholder="Email" required>
         <input type="password" name="senha_usuario" id="senha_usuario" maxlength="50" placeholder="Senha" required>
         <input type="password" name="confirmar_senha_usuario" id="confirmar_senha_usuario" maxlength="50" placeholder="Confirmar Senha" required>   

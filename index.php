@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style/conteudo.css">
     <link rel="stylesheet" href="style/menu.css">
     <link rel="stylesheet" href="style/rodape.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/cadastro.css">
     <link rel="stylesheet" href="style/global.css">
 </head>
 <body>
