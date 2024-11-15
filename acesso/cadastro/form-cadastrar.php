@@ -1,8 +1,18 @@
+<?php 
+    include_once("acesso/sessao.php");
+    if (logado()){
+        echo "<script>alert('Você já está logado!');</script>";
+        header("Location: index.php");
+        exit();
+    }
+?>
+
 <div class="form-cadastrar">
     <h1>Cadastro</h1>
     <?php 
     if (isset($_GET['cadastrado'])) {
         $cadastrado = $_GET['cadastrado'];
+
         if($cadastrado == '0') {
             echo "<h2 style='color: red;'>FALHA AO CADASTRAR</h2>";
         }

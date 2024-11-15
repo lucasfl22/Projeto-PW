@@ -7,9 +7,9 @@ $senha_usuario = "";
 $confirmar_senha_usuario = "";
 $cadastrado = 0;
 
-
+// Verifica se o formulário foi enviado
 if (!$_POST) {
-    header("Location: ../../?pg=acesso/form-cadastrar&cadastrado=0");
+    header("Location: ../../?pg=acesso/cadastro/form-cadastrar&cadastrado=0");
     mysqli_close($conexao);
     exit();
 }
@@ -22,27 +22,32 @@ $confirmar_senha_usuario = $_POST['confirmar_senha_usuario'];
 $sql_verificacao = "SELECT * FROM usuarios WHERE nome = '$nome_usuario' OR email = '$email_usuario'";
 $query_verificacao = mysqli_query($conexao, $sql_verificacao);
 
+// Verifica se o nome ou email já existe
 if (mysqli_num_rows($query_verificacao) > 0) {
-    header("Location: ../../?pg=acesso/form-cadastrar&cadastrado=2");
+    header("Location: ../../?pg=acesso/cadastro/form-cadastrar&cadastrado=2");
     mysqli_close($conexao);
     exit();
 }
 
+// Verifica se as senhas correspondem
 if($senha_usuario != $confirmar_senha_usuario){
-    header("Location: ../../?pg=acesso/form-cadastrar&cadastrado=3");
+    header("Location: ../../?pg=acesso/cadastro/form-cadastrar&cadastrado=3");
     mysqli_close($conexao);
     exit();
 }
 
+// Insere o usuário no banco de dados
 $sql = "INSERT INTO usuarios (nome,email,senha) VALUES ('$nome_usuario','$email_usuario','$senha_usuario')";
 $query = mysqli_query($conexao, $sql);
 
 if ($query) {
-    header("Location: ../../?pg=acesso/form-cadastrar&cadastrado=1");
+    // Cadastro bem-sucedido
+    header("Location: ../../?pg=acesso/cadastro/form-cadastrar&cadastrado=1");
     mysqli_close($conexao);
     exit();
 }else{
-    header("Location: ../../?pg=acesso/form-cadastrar&cadastrado=0");
+    // Caso ocorra um erro ao inserir o usuário
+    header("Location: ../../?pg=acesso/cadastro/form-cadastrar&cadastrado=0");
     mysqli_close($conexao);
     exit();
 }
