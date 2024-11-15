@@ -8,6 +8,6 @@
         if (logado()):
             ?>
             <li class="botao-sair"><a href="?pg=acesso/logout">Sair</a></li>
-        <?php endif; ?> 
+        <?php endif; ?>
     </ul>
 </nav>
