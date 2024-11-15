@@ -1,43 +1,96 @@
-.conteudo {
-    width: 90%;
-    margin: 30px auto;
+.sobre {
+    background-color: #FFF8E1;
+    padding: 60px 20px;
     text-align: center;
 }
 
-.conteudo h1 {
-    color: #2c3e50;
-    font-size: 32px;
-    margin-bottom: 30px;
+.sobre .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.item {
+.titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #8B4513;
+    margin-bottom: 20px;
+}
+
+.descricao {
+    font-size: 18px;
+    color: #8B4513;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.funcionalidades-container {
     display: flex;
-    margin-bottom: 30px;
-    padding: 20px;
-    border: 1px solid #ecf0f1;
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+    justify-content: space-between;
 }
 
-.item-imagem img {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 20px;
+.funcionalidade {
+    background-color: #A0522D;
+    color: #FFF8E1;
+    padding: 40px;
+    width: 48%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
-.item-info {
-    text-align: left;
+.funcionalidade h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #D2B48C;
+    margin-bottom: 20px;
 }
 
-.item-info h2 {
-    font-size: 24px;
-    color: #34495e;
-}
-
-.item-info p {
-    color: #7f8c8d;
+.funcionalidade p {
     font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #FFF8E1;
+}
+
+.botao {
+    background-color: #D2B48C;
+    color: #A0522D;
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botao:hover {
+    background-color: #A0522D;
+    color: #FFF8E1;
+    transform: scale(1.05);
+}
+
+.funcionalidade:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .funcionalidade {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .titulo {
+        font-size: 36px;
+    }
+
+    .descricao {
+        font-size: 16px;
+    }
 }
