@@ -11,7 +11,7 @@ $usuario_id = $_REQUEST['usuario_id'];
 
 $sql = "INSERT INTO posts
 (tipo, titulo, comentario, avaliacao, usuario_id) 
-VALUES ('serie', '$titulo', '$comentario', '$avaliacao', '3')";
+VALUES ('$tipo', '$titulo', '$comentario', '$avaliacao', '3')";  //
 
 $query = mysqli_query($conexao, $sql);
 
@@ -24,6 +24,7 @@ if ($query) {
 mysqli_close($conexao);
 
 ?>
+
 
 
 
