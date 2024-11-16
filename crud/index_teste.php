@@ -24,8 +24,7 @@
 
     <?php
 
-        include_once("../components/topo/topo.php");
-        include_once("../components/menu/menu.php");
+
 
         if(empty($_SERVER['QUERY_STRING'])){
             $var = "../components/conteudo/conteudo.php";
