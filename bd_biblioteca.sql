@@ -29,3 +29,33 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
 (5, 'Calebe34', 'cal23ebearcilio@gmail.com', '12324354676'),
 (9, 'Joaquim', 'joaquim@gmail.com', '1234'),
 (10, 'chico', 'chico@gmail.com', 'chico');
+
+
+--
+-- Estrutura para tabela `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` enum('livro','serie','filme') NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `comentario` text NOT NULL,
+  `avaliacao` decimal(4,2) NOT NULL DEFAULT 0.00,
+  `usuario_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `usuario_id` (`usuario_id`),
+  CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+--
+-- Despejando dados para a tabela `posts`
+--
+
+INSERT INTO `posts` (`tipo`, `titulo`, `comentario`, `avaliacao`, `usuario_id`) VALUES
+('livro', 'O Senhor dos Anéis', 'Uma obra épica e envolvente!', 9.5, 1),
+('serie', 'Breaking Bad', 'Excelente narrativa e personagens marcantes.', 10.0, 3),
+('filme', 'Matrix', 'Revolucionário no uso de efeitos visuais.', 9.0, 4),
+('livro', 'Dom Quixote', 'Uma leitura clássica e enriquecedora.', 8.0, 5),
+('serie', 'Stranger Things', 'Uma ótima nostalgia dos anos 80.', 8.7, 9),
+('filme', 'O Poderoso Chefão', 'Um clássico absoluto do cinema.', 10.0, 10);
