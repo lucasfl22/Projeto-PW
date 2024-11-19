@@ -24,13 +24,13 @@ if ($query) {
     echo "<h2>Postado com Sucesso</h2>";
 
     if ($tipo == 'filme') {     //as variaveis de tipo vao ser fornecidas pela url
-        header("Location: lista_filme.php");
+        header("Location: ../index.php?pg=bate-papo/bate-papo_filme");
         exit;
     }else if ($tipo == 'serie'){
-        header("Location: lista_serie.php");
+        header("Location: ../index.php?pg=bate-papo/bate-papo_serie");
         exit;
     }else if ($tipo == 'livro'){
-        header("Location: lista_livro.php");
+        header("Location: ../index.php?pg=bate-papo/bate-papo_livro");
         exit;
     }
 } else {
