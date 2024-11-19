@@ -18,7 +18,7 @@
 
 ?>
 
-<div class="form_post">
+<div class="form_cria_post">
     <h1>Editar Post</h1>
 
     <form action="edita_post.php" method="post">

@@ -6,14 +6,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Redireciona para a página de login se o usuário não estiver logado
-if (!logado()) {
-    header("Location: ?pg=acesso/login/form-login");
-    exit();
-}
-
 // Consulta para obter postagens do tipo filme, incluindo o nome do usuário
-$sql_filmes = "SELECT posts.*, usuarios.nome AS nome_usuario FROM posts JOIN usuarios ON posts.usuario_id = usuarios.id WHERE posts.tipo = 'filme'";
+$sql_filmes = "SELECT posts.*, usuarios.nome AS nome_usuario FROM posts JOIN usuarios ON posts.usuario_id = usuarios.id WHERE posts.tipo = 'filme' ORDER BY posts.id DESC";
 $query_filmes = mysqli_query($conexao, $sql_filmes);
 ?>
 
