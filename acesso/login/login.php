@@ -1,7 +1,7 @@
 <?php
 include_once "../../config.inc.php";
 
-$email_usuario = "";
+$usuario = "";
 $senha_usuario = "";
 
 // Verifica se o formulário foi enviado
@@ -11,10 +11,10 @@ if (!$_POST) {
     exit();
 }
 
-$email_usuario = $_POST['email'];
+$usuario = $_POST['usuario'];
 $senha_usuario = $_POST['senha'];
 
-$sql_login = "SELECT * FROM usuarios WHERE email = '$email_usuario' AND senha = '$senha_usuario'";
+$sql_login = "SELECT * FROM usuarios WHERE (email = '$usuario' OR nome = '$usuario') AND senha = '$senha_usuario'";
 $query_login = mysqli_query($conexao, $sql_login);
 
 if (mysqli_num_rows($query_login) > 0) {
@@ -25,6 +25,7 @@ if (mysqli_num_rows($query_login) > 0) {
         $_SESSION['id_usuario'] = $dados_usuario['id'];
         $_SESSION['nome_usuario'] = $dados_usuario['nome'];
         $_SESSION['email_usuario'] = $dados_usuario['email'];
+        $_SESSION['data_cadastro'] = $dados_usuario['data_cadastro'];
 
         header("Location: ../../index.php");
         mysqli_close($conexao);

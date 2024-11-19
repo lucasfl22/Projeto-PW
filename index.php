@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <title>CineBookly</title>
     <link rel="stylesheet" href="style/topo.css">
     <link rel="stylesheet" href="style/conteudo.css">
@@ -10,6 +11,11 @@
     <link rel="stylesheet" href="style/rodape.css">
     <link rel="stylesheet" href="style/login.css">
     <link rel="stylesheet" href="style/cadastro.css">
+    <link rel="stylesheet" href="style/perfil.css">
+    <link rel="stylesheet" href="style/cria_post.css">
+    <link rel="stylesheet" href="style/bate-papo_filme.css">
+    <link rel="stylesheet" href="style/bate-papo_serie.css">
+    <link rel="stylesheet" href="style/bate-papo_livro.css">
     <link rel="stylesheet" href="style/global.css">
 </head>
 <body>

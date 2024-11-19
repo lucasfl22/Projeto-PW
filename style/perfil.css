@@ -1,0 +1,60 @@
+.perfil {
+    background-color: #FFF8E1;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.perfil .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+
+.titulo-perfil {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #8B4513;
+    margin-bottom: 20px;
+}
+
+.perfil-nome {
+    font-weight: bold;
+    color: #FF4500;
+}
+
+.informacoes-perfil, .atividades-perfil {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.informacoes-perfil h2, .atividades-perfil h2 {
+    font-size: 24px;
+    color: #8B4513;
+    margin-bottom: 10px;
+}
+
+.informacoes-perfil p, .atividades-perfil ul {
+    font-size: 18px;
+    color: #4B2C20;
+}
+
+.atividades-perfil ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.atividades-perfil li {
+    background-color: #D2B48C;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.atividades-perfil li:hover {
+    background-color: #C49A7D;
+}

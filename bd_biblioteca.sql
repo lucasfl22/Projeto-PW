@@ -17,6 +17,9 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+ALTER TABLE `usuarios`
+ADD COLUMN `data_cadastro` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
 
 --
 -- Despejando dados para a tabela `usuarios`
@@ -59,3 +62,19 @@ INSERT INTO `posts` (`tipo`, `titulo`, `comentario`, `avaliacao`, `usuario_id`) 
 ('livro', 'Dom Quixote', 'Uma leitura clássica e enriquecedora.', 8.0, 5),
 ('serie', 'Stranger Things', 'Uma ótima nostalgia dos anos 80.', 8.7, 9),
 ('filme', 'O Poderoso Chefão', 'Um clássico absoluto do cinema.', 10.0, 10);
+
+
+--
+-- Estrutura para tabela `interacoes`
+--
+
+CREATE TABLE interacoes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    post_id INT,
+    usuario_id INT,
+    tipo ENUM('like', 'dislike'),
+    comentario TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (post_id) REFERENCES posts(id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);

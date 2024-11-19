@@ -1,63 +1,116 @@
+/* topo.css atualizado */
+
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
 
 .topo-biblioteca {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
     background-color: #8B5E3C;
     color: #FFF8E1;
-    font-family: Arial, sans-serif;
+    font-family: 'Libre Baskerville', serif;
     position: relative;
     border-bottom: 4px solid #A0522D;
+}
+
+.logo-img {
+    width: 70px;
+    height: 60px;
 }
 
 .logo {
     flex: 1;
     text-align: center;
-    margin-left: 150px
+    margin-left: 130px;
 }
 
 .logo h1 {
     font-size: 36px;
     font-weight: bold;
-    font-family: 'Libre Baskerville', serif;
     color: #FFF8E1;
     margin: 0;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+/* Botões */
+.botao-perfil,
+.botao-sair {
+    font-size: 16px;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #FFF;
+}
+
+.botao-perfil {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: #D2B48C;
+    color: #FFF;
+    transition: background-color 0.3s;
+}
+
+.botao-perfil:hover {
+    background-color: #C49A7D;
+}
+
+.botao-sair {
+    background-color: #B22222;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    margin-left: 15px;
+}
+
+.botao-sair:hover {
+    background-color: #8B0000;
+}
+
+/* Botoes Login/Cadastro */
 .botoes {
     display: flex;
     gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .botoes button {
-    padding: 10px 20px;
+    background-color: #D2B48C;
+    border: none;
+    color: #4B2C20;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: all 0.3s;
-}
-
-.botao-login {
-    background-color: #D2B48C;
-    color: #4B2C20;
-}
-
-.botao-cadastro {
-    background-color: #A0522D;
-    color: #FFF8E1;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .botoes button:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
+    background-color: #C49A7D;
+    color: #FFF8E1;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+.botoes button a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 0;
+}
+
+.botoes button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.5);
+}
+
+/* Linha decorativa */
 .topo-biblioteca::after {
     content: "";
     position: absolute;
@@ -65,16 +118,25 @@
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
-    height: 4px;
+    height: 3px;
     background-color: #D2B48C;
     border-radius: 2px;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
-.botoes button a {
+.usuario-info {
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    margin-left: 20px;
+}
+
+.usuario-simbolo {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.usuario-nome {
+    font-weight: bold;
     color: inherit;
-    text-decoration: none;
-    display: block;
-    height: 100%;
-    width: 100%;
 }

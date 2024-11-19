@@ -25,6 +25,53 @@
     font-weight: 300;
 }
 
+.boas-vindas {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boas-vindas h2 {
+    font-size: 18px;
+    margin: 0;
+    color: #FFF8E1;
+    font-weight: normal;
+}
+
+.boas-vindas span {
+    font-weight: bold;
+    color: #ff9100;
+}
+
+.botao-perfil,
+.botao-sair {
+    font-size: 14px;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #FFF;
+}
+
+.botao-perfil {
+    background-color: #D2B48C;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.botao-perfil:hover {
+    background-color: #C49A7D;
+}
+
+.botao-sair {
+    background-color: #B22222;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.botao-sair:hover {
+    background-color: #8B0000;
+}
+
 .funcionalidades-container {
     display: flex;
     flex-wrap: wrap;
@@ -67,6 +114,16 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+}
+
+.botao a {
+    text-decoration: none;
+    color: inherit; /* Isso fará com que o link herde a cor do botão */
+}
+
+.botao:visited a,
+.botao:hover a {
+    color: inherit; /* Garante que o link não mude de cor ao ser visitado ou ao passar o mouse */
 }
 
 .botao:hover {

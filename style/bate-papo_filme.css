@@ -1,0 +1,145 @@
+.bate-papo-body {
+    background-color: #FFF8E1; /* Fundo bege claro */
+    padding: 60px 20px;
+    color: #8B4513; /* Texto em marrom */
+}
+
+.bate-papo-body .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bate-papo-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #D2B48C;
+    margin-bottom: 40px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.postagem {
+    background-color: #D2B48C;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .postagem {
+        width: 90%;
+    }
+}
+
+.postagem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.postagem h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #8B4513;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.postagem p {
+    font-size: 16px;
+    color: #5C4033; /* Marrom mais suave para o texto */
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.postagem a {
+    color: #FF6347; /* Cor laranja suave para o link */
+    text-decoration: none;
+}
+
+.postagem a:hover {
+    text-decoration: underline;
+}
+
+button[type="submit"] {
+    background-color: #D2B48C; /* Cor de fundo suave */
+    color: #8B4513; /* Texto marrom escuro */
+    padding: 8px 18px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-right: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #FF6347; /* Cor laranja para o hover */
+    color: #FFF;
+    transform: scale(1.05);
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #8B4513; /* Borda marrom */
+    background-color: #FFF8E1; /* Fundo bege claro */
+    color: #8B4513; /* Texto marrom escuro */
+    font-size: 14px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #D2B48C; /* Borda dourada ao focar */
+}
+
+hr.bate-papo-hr {
+    border: 1px solid #D2B48C; /* Linha dourada */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.comentario {
+    font-size: 14px;
+    color: #5C4033; /* Cor marrom suave para comentários */
+    margin-top: 10px;
+}
+
+.comentario strong {
+    color: #8B4513; /* Nome do usuário em marrom escuro */
+}
+
+.comentario p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.h2-estilo {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #8B4513; /* Marrom escuro */
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .h2-estilo {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+}
+ 

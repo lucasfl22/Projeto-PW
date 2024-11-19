@@ -37,7 +37,7 @@ if($senha_usuario != $confirmar_senha_usuario){
 }
 
 // Insere o usuário no banco de dados
-$sql = "INSERT INTO usuarios (nome,email,senha) VALUES ('$nome_usuario','$email_usuario','$senha_usuario')";
+$sql = "INSERT INTO usuarios (nome, email, senha, data_cadastro) VALUES ('$nome_usuario', '$email_usuario', '$senha_usuario', NOW())";
 $query = mysqli_query($conexao, $sql);
 
 if ($query) {
