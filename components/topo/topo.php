@@ -14,8 +14,8 @@
         </a>
     <?php else: ?>
         <div class="botoes">
-            <button class="botao-login"><a href="?pg=acesso/login/form-login">Login</a></button>
-            <button class="botao-cadastro"><a href="?pg=acesso/cadastro/form-cadastrar">Cadastro</a></button>
+            <a href="?pg=acesso/login/form-login"><button class="botao-login">Login</button></a>
+            <a href="?pg=acesso/cadastro/form-cadastrar"><button class="botao-cadastro">Cadastro</button></a>
         </div>
     <?php endif; ?>
 </div>
