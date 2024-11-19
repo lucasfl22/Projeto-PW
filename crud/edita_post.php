@@ -2,24 +2,39 @@
 
 include_once("../config.inc.php");
 
+session_start();
+if (!isset($_SESSION['id_usuario'])) {      //so edita se tiver logado
+    die("Erro: Usuário não está logado.");
+}
+
 $id =         $_REQUEST['id'];
 $tipo =       $_REQUEST['tipo'];
 $titulo =     $_REQUEST['titulo'];
 $comentario = $_REQUEST['comentario'];
 $avaliacao =  $_REQUEST['avaliacao'];
-$usuario_id = $_REQUEST['usuario_id'];
+$usuario_id = $_SESSION['id_usuario'];
 
+    $sql = "UPDATE posts SET titulo = '$titulo', comentario = '$comentario', avaliacao = '$avaliacao' WHERE id = $id AND usuario_id = {$_SESSION['id_usuario']}";
 
-$sql = "UPDATE posts SET titulo = '$titulo', comentario = '$comentario', avaliacao = '$avaliacao' WHERE id = $id";
+    $query = mysqli_query($conexao, $sql);
 
-$query = mysqli_query($conexao, $sql);
+    if ($query) {
+        echo "<h2>Post Editado</h2>";
+    
+        if ($tipo == 'filme') {     //as variaveis de tipo vao ser fornecidas pela url
+            header("Location: lista_filme.php");
+            exit;
+        }else if ($tipo == 'serie'){
+            header("Location: lista_serie.php");
+            exit;
+        }else if ($tipo == 'livro'){
+            header("Location: lista_livro.php");
+            exit;
+        }
+    } else {
+        echo "<h2>Erro ao Editar: " . mysqli_error($conexao) . "</h2>";
+    }
 
-if ($query) {
-    echo "<h2>Post Alterado com Sucesso!</h2>";
-} else {
-    echo "<h2>Erro ao alterar o post: " . mysqli_error($conexao) . "</h2>";
-}
-
-mysqli_close($conexao);
+    mysqli_close($conexao);
 
 ?>
