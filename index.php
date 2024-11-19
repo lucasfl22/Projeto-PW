@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <title>CineBookly</title>
     <link rel="stylesheet" href="style/topo.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style/conteudo.css">
     <link rel="stylesheet" href="style/menu.css">
     <link rel="stylesheet" href="style/rodape.css">
