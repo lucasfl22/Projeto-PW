@@ -29,6 +29,12 @@ $query_filmes = mysqli_query($conexao, $sql_filmes);
                 <strong>Postado por: </strong>
                 <a href="index.php?pg=perfil/perfil_post&id=<?php echo $filme['usuario_id']; ?>" class="perfil-link"><?php echo $filme['nome_usuario']; ?></a>
             </p>
+
+            <!-- Permitir que apenas os donos dos posts editem-nos ou excluam-nos >:C -->
+            <?php if (isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] == $filme['usuario_id']) { ?>
+                <a href="crud/exclui_post.php?id=<?php echo $filme['id']; ?>&tipo=filme"><b>[X] Excluir</b></a> | 
+                <a href="crud/form_edita_post.php?id=<?php echo $filme['id']; ?>&tipo=filme"><b>[V] Editar</b></a><br><br>
+            <?php } ?>            
             
             <!-- Likes e Dislikes -->
             <form action="interagir.php" method="post">

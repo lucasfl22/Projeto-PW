@@ -30,6 +30,11 @@ $query_series = mysqli_query($conexao, $sql_series);
                 <a href="index.php?pg=perfil/perfil_post&id=<?php echo $serie['usuario_id']; ?>" class="perfil-link"><?php echo $serie['nome_usuario']; ?></a>
             </p>
             
+            <?php if (isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] == $serie['usuario_id']) { ?>
+                <a href="crud/exclui_post.php?id=<?php echo $serie['id']; ?>&tipo=filme"><b>[X] Excluir</b></a> | 
+                <a href="crud/form_edita_post.php?id=<?php echo $serie['id']; ?>&tipo=filme"><b>[V] Editar</b></a><br><br>
+            <?php } ?> 
+
             <!-- Likes e Dislikes -->
             <form action="interagir.php" method="post">
                 <input type="hidden" name="post_id" value="<?php echo $serie['id']; ?>">
