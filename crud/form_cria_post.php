@@ -1,5 +1,12 @@
 <div class="form_cria_post">
-        <h1>Criar Post</h1>
+        <?php if ($_REQUEST['tipo'] == 'filme') { ?>
+                <h1>Crie Seu Post Sobre Filmes</h1> 
+        <?php }else if ($_REQUEST['tipo'] == 'serie'){ ?> 
+                <h1>Crie Seu Post Sobre Séries</h1> 
+        <?php }else if ($_REQUEST['tipo'] == 'livro'){ ?>
+                <h1>Crie Seu Post Sobre Livros</h1> 
+        <?php } ?> 
+                
 
         <form action="crud/cria_post.php" method="post">
                 <input type="hidden" name="tipo" id="tipo" value="<?php echo isset($_REQUEST['tipo']) ? $_REQUEST['tipo'] : ''; ?>">
