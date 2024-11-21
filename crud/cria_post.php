@@ -1,10 +1,10 @@
 <?php
-
 include_once("../config.inc.php");  
+include_once("acesso/sessao.php");
 
-session_start();
-if (!isset($_SESSION['id_usuario'])) {
-    die("Erro: Usuário não está logado.");      //so cria se tiver logado
+//só cria se estiver logado
+if (!logado()) {
+    echo "<script>alert('Você não está logado!'); window.location.href = 'index.php?pg=acesso/login/form-login';</script>";
 }
 
 $tipo =       $_REQUEST['tipo'];
@@ -21,20 +21,21 @@ VALUES ('$tipo', '$titulo', '$comentario', '$avaliacao', '$usuario_id')";
 $query = mysqli_query($conexao, $sql);
 
 if ($query) {
-    echo "<h2>Postado com Sucesso</h2>";
-
     if ($tipo == 'filme') {     //as variaveis de tipo vao ser fornecidas pela url
         header("Location: ../index.php?pg=bate-papo/bate-papo_filme");
+        mysqli_close($conexao);
         exit;
     }else if ($tipo == 'serie'){
         header("Location: ../index.php?pg=bate-papo/bate-papo_serie");
+        mysqli_close($conexao);
         exit;
     }else if ($tipo == 'livro'){
         header("Location: ../index.php?pg=bate-papo/bate-papo_livro");
+        mysqli_close($conexao);
         exit;
     }
 } else {
-    echo "<h2>Erro ao postar: " . mysqli_error($conexao) . "</h2>";
+    echo "<h2>Erro ao Postar: " . mysqli_error($conexao) . "</h2>";
 }
 
 mysqli_close($conexao);

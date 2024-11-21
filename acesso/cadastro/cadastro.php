@@ -1,5 +1,11 @@
 <?php
 include_once "../../config.inc.php";
+include_once("../sessao.php");
+
+//verifica se está logado
+if (logado()) {
+    echo "<script>alert('Você já está logado!'); window.location.href = 'index.php';</script>";
+}
 
 $nome_usuario = "";
 $email_usuario = "";

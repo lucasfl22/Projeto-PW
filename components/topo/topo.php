@@ -3,11 +3,11 @@
     <div class="logo">
         <h1>CineBookly</h1>
     </div>
-    <?php include_once("acesso/sessao.php"); ?>
-    <?php if (logado()): ?>
+    <?php include_once("acesso/sessao.php");
+    if (logado()): ?>
         <a href="?pg=perfil/perfil" class="botao-perfil">
             <span class="usuario-simbolo">👤</span>
-            <span class="usuario-nome"><?php echo $_SESSION['nome_usuario']; ?></span>
+            <span class="usuario-nome"><?= $_SESSION['nome_usuario'] ?></span>
         </a>
         <a href="?pg=acesso/logout" class="botao-sair">
             Sair

@@ -1,10 +1,10 @@
 <?php 
-include_once "acesso/sessao.php";
-include_once "config.inc.php";
+include_once("config.inc.php");
+include_once("acesso/sessao.php");
 
+//Verifica se está logado
 if (!logado()) {
-    header("Location: ../?pg=acesso/login/form-login");
-    exit();
+    echo "<script>alert('Você não está logado!'); window.location.href = 'index.php?pg=acesso/login/form-login';</script>";
 }
 
 // Verifica se o ID do usuário foi passado

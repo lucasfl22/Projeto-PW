@@ -1,10 +1,10 @@
 <?php
-
 include_once("../config.inc.php");
+include_once("acesso/sessao.php");
 
-session_start();
-if (!isset($_SESSION['id_usuario'])) {      //so edita se tiver logado
-    die("Erro: Usuário não está logado.");
+//só edita se estiver logado
+if (!logado()) {
+    echo "<script>alert('Você não está logado!'); window.location.href = 'index.php?pg=acesso/login/form-login';</script>";
 }
 
 $id =         $_REQUEST['id'];
@@ -14,27 +14,26 @@ $comentario = $_REQUEST['comentario'];
 $avaliacao =  $_REQUEST['avaliacao'];
 $usuario_id = $_SESSION['id_usuario'];
 
-    $sql = "UPDATE posts SET titulo = '$titulo', comentario = '$comentario', avaliacao = '$avaliacao' WHERE id = $id AND usuario_id = {$_SESSION['id_usuario']}";
+$sql = "UPDATE posts SET titulo = '$titulo', comentario = '$comentario', avaliacao = '$avaliacao' WHERE id = $id AND usuario_id = {$_SESSION['id_usuario']}";
+$query = mysqli_query($conexao, $sql);
 
-    $query = mysqli_query($conexao, $sql);
-
-    if ($query) {
-        echo "<h2>Post Editado</h2>";
-    
-        if ($tipo == 'filme') {     //as variaveis de tipo vao ser fornecidas pela url
-            header("Location: ../index.php?pg=bate-papo/bate-papo_filme");
-            exit;
-        }else if ($tipo == 'serie'){
-            header("Location: ../index.php?pg=bate-papo/bate-papo_serie");
-            exit;
-        }else if ($tipo == 'livro'){
-            header("Location: ../index.php?pg=bate-papo/bate-papo_livro");
-            exit;
-        }
-    } else {
-        echo "<h2>Erro ao Editar: " . mysqli_error($conexao) . "</h2>";
+if ($query) {
+    if ($tipo == 'filme') {     //as variaveis de tipo vao ser fornecidas pela url
+        header("Location: ../index.php?pg=bate-papo/bate-papo_filme");
+        mysqli_close($conexao);
+        exit;
+    }else if ($tipo == 'serie'){
+        header("Location: ../index.php?pg=bate-papo/bate-papo_serie");
+        mysqli_close($conexao);
+        exit;
+    }else if ($tipo == 'livro'){
+        header("Location: ../index.php?pg=bate-papo/bate-papo_livro");
+        mysqli_close($conexao);
+        exit;
     }
+} else {
+    echo "<h2>Erro ao Editar: " . mysqli_error($conexao) . "</h2>";
+}
 
-    mysqli_close($conexao);
-
+mysqli_close($conexao);
 ?>
