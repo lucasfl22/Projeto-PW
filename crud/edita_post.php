@@ -1,6 +1,6 @@
 <?php
 include_once("../config.inc.php");
-include_once("acesso/sessao.php");
+include_once("../acesso/sessao.php");
 
 //só edita se estiver logado
 if (!logado()) {

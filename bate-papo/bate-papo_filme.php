@@ -6,7 +6,7 @@ $sql_filmes = "SELECT posts.*, usuarios.nome AS nome_usuario FROM posts JOIN usu
 $query_filmes = mysqli_query($conexao, $sql_filmes);
 ?>
 
-    <h2 class="h2-estilo">Postagens de Filmes</h2>
+    <h2 class="bate-papo-title">Postagens de Filmes</h2>
 
 <?php while ($filme = mysqli_fetch_array($query_filmes)): ?>
     <div class="postagem">

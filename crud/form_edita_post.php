@@ -16,7 +16,7 @@ while ($posts = mysqli_fetch_array($query)){
 <div class="form_cria_post">
     <h1>Editar Post</h1>
 
-    <form action="edita_post.php" method="post">
+    <form action="crud/edita_post.php" method="post">
             <input type="hidden"   name="id"         id="id"         value="<?=$posts['id'] ?>">
             <input type="hidden"   name="tipo"       id="tipo"       value="<?=$posts['tipo'] ?>">  
             <input type="text"     name="titulo"     id="titulo"     value="<?=$posts['titulo'] ?>"     required><br>
