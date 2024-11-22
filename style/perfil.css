@@ -58,3 +58,20 @@
 .atividades-perfil li:hover {
     background-color: #C49A7D;
 }
+
+.btn-publicacao {
+    display: inline-block;
+    background-color: #FF6347;
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+.btn-publicacao:hover {
+    background-color: #D24D3A;
+    transform: scale(1.05);
+}
