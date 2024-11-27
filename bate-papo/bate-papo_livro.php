@@ -50,8 +50,9 @@ $query_livros = mysqli_query($conexao, $sql_livros);
 
             <hr class="hr-estilo">
         </div>
-</div>
 
-<?php endwhile; mysqli_close($conexao); ?>
+
+        <?php endwhile; mysqli_close($conexao); ?>
+</div>
 
 </body>

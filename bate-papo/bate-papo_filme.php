@@ -50,8 +50,8 @@ $query_filmes = mysqli_query($conexao, $sql_filmes);
 
             <hr class="hr-estilo">
         </div>
-</div>
 
-<?php endwhile; mysqli_close($conexao); ?>
+    <?php endwhile; mysqli_close($conexao); ?>
+</div>
 
 </body>

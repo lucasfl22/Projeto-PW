@@ -50,8 +50,8 @@ $query_series = mysqli_query($conexao, $sql_series);
 
             <hr class="hr-estilo">
         </div>
+        
+        <?php endwhile; mysqli_close($conexao); ?>
 </div>
-
-<?php endwhile; mysqli_close($conexao); ?>
 
 </body>
