@@ -1,5 +1,8 @@
 body {
-
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
 }
 
 h1, h2 {
@@ -14,11 +17,4 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
 }
