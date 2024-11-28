@@ -11,7 +11,7 @@
         echo '<h2><a href="../acesso/login/form-login.php">Criar Novo Post</a></h2>';
     }
 
-    $sql = mysqli_query($conexao,"SELECT * FROM mensagens "); // fazer um inner join para exibir o nome do usuário tbm
+    $sql = mysqli_query($conexao,"SELECT * FROM mensagem "); // fazer um inner join para exibir o nome do usuário tbm
 
     while($tabela = mysqli_fetch_array($sql)){
         echo "Usuário:  $tabela[usuario_id]     <br>";
