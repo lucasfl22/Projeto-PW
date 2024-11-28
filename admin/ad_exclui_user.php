@@ -12,7 +12,7 @@ $id = $_REQUEST['id'];
 $sql = mysqli_query($conexao,"DELETE FROM usuarios WHERE id = $id");
 
 if ($sql) {
-    header("Location: ../index.php?pg=bate-papo/bate-papo_filme"); //redirecionar para o painel de controle
+    echo "<h3>Usuario Excluido com Sucesso<h3>";
     mysqli_close($conexao);
     exit;
 }else {

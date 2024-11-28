@@ -57,7 +57,7 @@ CREATE TABLE `posts` (
   `usuario_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
-  CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)
+  CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 

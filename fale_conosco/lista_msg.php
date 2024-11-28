@@ -1,15 +1,9 @@
-<h1>Filmes</h1>
+<h1>Mensagens</h1>
 
 <?php
 
     session_start();
     include_once("../config.inc.php");
-
-    if (isset($_SESSION['id_usuario'])) {
-        echo '<h2><a href="form_cria_post.php?tipo=filme">Criar Novo Post</a></h2>'; //erro no envio do formulario a partir daqui. problema de referencia no form??
-    } else {
-        echo '<h2><a href="../acesso/login/form-login.php">Criar Novo Post</a></h2>';
-    }
 
     $sql = mysqli_query($conexao,"SELECT * FROM mensagem "); // fazer um inner join para exibir o nome do usuário tbm
 
