@@ -1,8 +1,12 @@
 <?php
 include_once "config.inc.php";
 
-// Consulta para obter postagens do tipo filme, incluindo o nome do usuário
-$sql_filmes = "SELECT posts.*, usuarios.nome AS nome_usuario FROM posts JOIN usuarios ON posts.usuario_id = usuarios.id WHERE posts.tipo = 'filme' ORDER BY posts.id DESC";
+// Consulta para obter postagens do tipo filme
+$sql_filmes = "SELECT posts.*, usuarios.nome AS nome_usuario 
+    FROM posts 
+    JOIN usuarios ON posts.usuario_id = usuarios.id 
+    WHERE posts.tipo = 'filme' 
+    ORDER BY posts.id DESC";
 $query_filmes = mysqli_query($conexao, $sql_filmes);
 ?>
 <div class="div">
@@ -18,35 +22,17 @@ $query_filmes = mysqli_query($conexao, $sql_filmes);
                 <a href="index.php?pg=perfil/perfil_post&id=<?= $filme['usuario_id'] ?>" class="perfil-link"><?= $filme['nome_usuario'] ?></a>
             </p>
 
-            <!-- Permitir que apenas os donos dos posts editem-nos ou excluam-nos >:C -->
+            <!-- Permitir que apenas os donos dos posts editem ou excluam -->
             <?php if (isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] == $filme['usuario_id']) { ?>
                 <a href="crud/exclui_post.php?id=<?= $filme['id'] ?>&tipo=filme"><b>[X] Excluir</b></a> | 
                 <a href="index.php?pg=crud/form_edita_post&id=<?= $filme['id'] ?>&tipo=filme"><b>[V] Editar</b></a><br><br>
-            <?php } ?>            
-            
+            <?php } ?>
+
             <!-- Likes e Dislikes -->
-            <form action="interagir.php" method="post">
-                <input type="hidden" name="post_id" value="<?= $filme['id'] ?>">
-                <button type="submit" name="acao" value="like">👍 Like</button>
-                <button type="submit" name="acao" value="dislike">👎 Dislike</button>
-            </form>
-
-            <!-- Comentários -->
-            <form action="comentar.php" method="post">
-                <input type="hidden" name="post_id" value="<?= $filme['id'] ?>">
-                <textarea name="comentario" placeholder="Deixe seu comentário..."></textarea>
-                <button type="submit">Comentar</button>
-            </form>
-
-            <!-- Exibir Comentários -->
-            <?php
-            $sql_comentarios = "SELECT * FROM interacoes WHERE post_id = {$filme['id']} AND comentario IS NOT NULL";
-            $query_comentarios = mysqli_query($conexao, $sql_comentarios);
-
-            while ($comentario = mysqli_fetch_array($query_comentarios)) {
-                echo "<p><strong>Usuário {$comentario['usuario_id']}:</strong> {$comentario['comentario']}</p>";
-            }
-            ?>
+            <div class="interacoes">
+                <button class="like-btn" data-post-id="<?= $filme['id'] ?>">👍 <?= $filme['likes'] ?></button>
+                <button class="dislike-btn" data-post-id="<?= $filme['id'] ?>">👎 <?= $filme['dislikes'] ?></button>
+            </div>
 
             <hr class="hr-estilo">
         </div>
@@ -54,4 +40,31 @@ $query_filmes = mysqli_query($conexao, $sql_filmes);
     <?php endwhile; mysqli_close($conexao); ?>
 </div>
 
-</body>
+<script>
+// Seu código JS aqui
+
+document.querySelectorAll('.like-btn, .dislike-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const postId = this.dataset.postId;
+        const action = this.classList.contains('like-btn') ? 'like' : 'dislike';
+
+        // Enviar requisição para o servidor
+        fetch('bate-papo/interagir.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `post_id=${postId}&acao=${action}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                // Atualizar os botões com os novos valores
+                document.querySelector(`.like-btn[data-post-id="${postId}"]`).textContent = `👍 ${data.likes}`;
+                document.querySelector(`.dislike-btn[data-post-id="${postId}"]`).textContent = `👎 ${data.dislikes}`;
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(err => console.error('Erro ao processar a ação:', err));
+    });
+});
+</script>
