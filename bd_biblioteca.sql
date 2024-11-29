@@ -146,40 +146,44 @@ INSERT INTO `admin` (`email`, `senha`) VALUES
 -- Estrutura para tabela `mensagem`
 --
 
-CREATE TABLE `mensagem` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `assunto` text NOT NULL,
-  `mensagem` text NOT NULL,
-  `usuario_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE mensagem (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telefone VARCHAR(15) NOT NULL,
+    tipo_mensagem ENUM('comentario', 'denuncia', 'sugestao', 'avaliacao') NOT NULL,
+    mensagem TEXT NOT NULL,
+    usuario_id INT NOT NULL,
+    data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
 
 
 --
 -- Despejando dados para a tabela `mensagem`
 --
 
-INSERT INTO `mensagem` (`assunto`, `mensagem`, `usuario_id`) VALUES
-('Elogios', 'Tenho apenas elogios a fazer aos desenvolvedores do site, que demonstraram plena destreza em toda a construção do site!', 1),
-('Sujestão', 'Acredito que uma ferramenta de busca seria de grande ajuda. Não é porque o site não tenha muitos usuários ativos que não haja a necessidade de buscar por posts ou usuários.', 9),
-('Melhore!!!', 'UMA #@#$$ e também #$$*&$! E digo mais: $#&$* $*$& ##&$&#', 14),
-('Parabéns!', 'Parabéns pelo profissionalismo! O site emana "desenvolvedores SÊNIORS". Quero contratá-los!!', 20),
-('Adicionar aos Favoritos', 'Talvez fosse interessante adicionar uma seção de "Favoritos" para armazenar itens desejados.', 18),
-('Reclamação', 'Fiquei esperando a página de livros carregar por 30 minutos e no final deu erro!', 14),
-('Sugestão de Funcionalidade', 'Poderia ser interessante adicionar a opção de marcar posts como "favoritos". Isso ajudaria muito na organização!', 1),
-('Feedback de Performance', 'O site tem apresentado lentidão nas últimas semanas. Seria ótimo se pudessem melhorar o tempo de resposta nas páginas.', 3),
-('Erro no Cadastro', 'Tentei cadastrar minha conta e o site não está permitindo a criação. Me ajuda aí!', 4),
-('Opinião sobre o Layout', 'O layout é simples e funcional, mas acredito que poderia ser mais moderno e com mais opções de customização.', 5),
-('Sugestão de Melhorias', 'Uma área de sugestões, onde os usuários possam enviar ideias diretamente para a equipe, seria bem útil.', 9),
-('Problema na Pesquisa', 'A pesquisa não está funcionando corretamente. Nem todos os posts relevantes estão sendo exibidos nos resultados.', 10),
-('Elogios ao Suporte', 'O suporte foi muito rápido ao responder meu ticket. Fiquei muito satisfeito com a ajuda recebida!', 11),
-('Problema no Login', 'Tentei fazer login várias vezes e não consegui acessar minha conta. Preciso de ajuda!', 12),
-('Reclamação sobre o Design', 'O site tem um visual antiquado. Seria legal se tivesse uma repaginada para modernizar um pouco a aparência.', 13),
-('Sugestão para Melhorias', 'Talvez uma opção de personalizar a cor do tema do site fosse legal. Isso daria mais liberdade ao usuário.', 14),
-('Problema de Navegação', 'A navegação no site não está fluindo bem. Muitas vezes me perco e não encontro o que estou procurando.', 15),
-('Elogios sobre o Conteúdo', 'Adoro o conteúdo do site, muito bem escrito e com temas variados. Continue com esse excelente trabalho!', 16),
-('Dúvida sobre Funcionalidade', 'Gostaria de saber como posso excluir minha conta. Não encontrei essa opção no perfil.', 17),
-('Desempenho abaixo do esperado', 'O site está muito pesado. A página de vídeos leva uma eternidade para carregar.', 18),
-('Sugestão de Novos Recursos', 'Acho que seria interessante adicionar uma funcionalidade de "seguindo" para acompanhar usuários específicos.', 19),
-('Problema na Responsividade', 'O site não está funcionando bem no celular, as páginas ficam desformatadas e difícil de ler.', 20);
+INSERT INTO mensagem (nome, email, telefone, tipo_mensagem, mensagem, usuario_id) VALUES
+('João Silva', 'joao.silva@example.com', '123456789', 'comentario', 'Tenho apenas elogios a fazer aos desenvolvedores do site, que demonstraram plena destreza em toda a construção do site!', 1),
+('Maria Oliveira', 'maria.oliveira@example.com', '987654321', 'sugestao', 'Acredito que uma ferramenta de busca seria de grande ajuda. Não é porque o site não tenha muitos usuários ativos que não haja a necessidade de buscar por posts ou usuários.', 9),
+('Carlos Pereira', 'carlos.pereira@example.com', '456789123', 'denuncia', 'UMA #@#$$ e também #$$*&$! E digo mais: $#&$* $*$& ##&$&#', 4),
+('Ana Costa', 'ana.costa@example.com', '321654987', 'avaliacao', 'Parabéns pelo profissionalismo! O site emana "desenvolvedores SÊNIORS". Quero contratá-los!!', 11),
+('Lucas Santos', 'lucas.santos@example.com', '654321789', 'sugestao', 'Talvez fosse interessante adicionar uma seção de "Favoritos" para armazenar itens desejados.', 5),
+('Fernanda Lima', 'fernanda.lima@example.com', '789123456', 'denuncia', 'Fiquei esperando a página de livros carregar por 30 minutos e no final deu erro!', 4),
+('Roberto Almeida', 'roberto.almeida@example.com', '159753486', 'sugestao', 'Poderia ser interessante adicionar a opção de marcar posts como "favoritos". Isso ajudaria muito na organização!', 1),
+('Juliana Martins', 'juliana.martins@example.com', '753159486', 'avaliacao', 'O site tem apresentado lentidão nas últimas semanas. Seria ótimo se pudessem melhorar o tempo de resposta nas páginas.', 3),
+('Pedro Souza', 'pedro.souza@example.com', '852963741', 'denuncia', 'Tentei cadastrar minha conta e o site não está permitindo a criação. Me ajuda aí!', 4),
+('Clara Rocha', 'clara.rocha@example.com', '369258147', 'comentario', 'O layout é simples e funcional, mas acredito que poderia ser mais moderno e com mais opções de customização.', 5),
+('Marcos Silva', 'marcos.silva@example.com', '147258369', 'sugestao', 'Uma área de sugestões, onde os usuários possam enviar ideias diretamente para a equipe, seria bem útil.', 9),
+('Tatiane Ferreira', 'tatiane.ferreira@example.com', '258369147', 'denuncia', 'A pesquisa não está funcionando corretamente. Nem todos os posts relevantes estão sendo exibidos nos resultados.', 10),
+('Gustavo Lima', 'gustavo.lima@example.com', '369147258', 'avaliacao', 'O suporte foi muito rápido ao responder meu ticket. Fiquei muito satisfeito com a ajuda recebida!', 11),
+('Sofia Mendes', 'sofia.mendes@example.com', '951753486', 'denuncia', 'Tentei fazer login várias vezes e não consegui acessar minha conta. Preciso de ajuda!', 12),
+('Ricardo Gomes', 'ricardo.gomes@example.com', '753951852', 'avaliacao', 'O site tem um visual antiquado. Seria legal se tivesse uma repaginada para modernizar um pouco a aparência.', 11),
+('Patrícia Alves', 'patricia.alves@example.com', '159753258', 'sugestao', 'Talvez uma opção de personalizar a cor do tema do site fosse legal. Isso daria mais liberdade ao usuário.', 4),
+('Felipe Costa', 'felipe.costa@example.com', '258147963', 'denuncia', 'A navegação no site não está fluindo bem. Muitas vezes me perco e não encontro o que estou procurando.', 3),
+('Isabela Santos', 'isabela.santos@example.com', '369258147', 'comentario', 'Adoro o conteúdo do site, muito bem escrito e com temas variados. Continue com esse excelente trabalho!', 1),
+('Thiago Lima', 'thiago.lima@example.com', '147258369', 'sugestao', 'Gostaria de saber como posso excluir minha conta. Não encontrei essa opção no perfil.', 12),
+('Julio Cesar', 'julio.cesar@example.com', '258369147', 'denuncia', 'O site está muito pesado. A página de vídeos leva uma eternidade para carregar.', 12),
+('Mariana Ferreira', 'mariana.ferreira@example.com', '369147258', 'sugestao', 'Acho que seria interessante adicionar uma funcionalidade de "seguindo" para acompanhar usuários específicos.', 10),
+('Eduardo Almeida', 'eduardo.almeida@example.com', '951753258', 'denuncia', 'O site não está funcionando bem no celular, as páginas ficam desformatadas e difícil de ler.', 11);
