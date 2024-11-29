@@ -3,15 +3,13 @@
     <div class="logo">
         <h1>CineBookly - Área Administrativa</h1>
     </div>
+
     <?php include_once("../acesso/sessao.php");
     if (logado()): ?>
-        <a href="?pg=perfil/perfil" class="botao-perfil">
-            <span class="usuario-simbolo">👤</span>
+        <div class="usuario-info">
             <span class="usuario-nome"><?= $_SESSION['nome_usuario'] ?></span>
-        </a>
-        <a href="?pg=acesso/logout" class="botao-sair">
-            Sair
-        </a>
+            <a href="http://localhost/projetopw/index.php" class="botao-sair">Sair</a>
+        </div>
     <?php else: ?>
         <div class="botoes">
             <a href="?pg=acesso/login/form-login"><button class="botao-login">Login</button></a>

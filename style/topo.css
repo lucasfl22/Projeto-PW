@@ -6,11 +6,11 @@
     display: flex;
     align-items: center;
     padding: 20px 30px;
-    background-color: #8B5E3C;
-    color: #FFF8E1;
+    background-color: #8B5E3C; /* Cor de fundo marrom */
+    color: #FFF8E1; /* Cor do texto */
     font-family: 'Libre Baskerville', serif;
     position: relative;
-    border-bottom: 4px solid #A0522D;
+    border-bottom: 4px solid #A0522D; /* Linha de separação */
 }
 
 .logo-img {
@@ -21,7 +21,7 @@
 .logo {
     flex: 1;
     text-align: center;
-    margin-left: 130px;
+    margin-left: 130px; /* Ajuste de alinhamento */
 }
 
 .logo h1 {
@@ -33,36 +33,33 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* Botões */
-.botao-perfil,
+/* Estilizando as informações do usuário */
+.usuario-info {
+    display: flex;
+    align-items: center;
+    color: #FFF8E1; /* Cor do nome */
+    margin-left: 20px;
+}
+
+.usuario-nome {
+    font-size: 20px; /* Tamanho maior para o nome */
+    font-weight: bold;
+    color: #FFF8E1;
+    margin-right: 15px; /* Espaço entre o nome e o botão de sair */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Adicionando sombra ao nome */
+}
+
+/* Estilizando o botão "Sair" */
 .botao-sair {
     font-size: 16px;
     text-decoration: none;
     padding: 12px 20px;
     border-radius: 8px;
+    background-color: #B22222; /* Cor de fundo do botão */
+    color: #FFF;
     transition: all 0.3s ease;
-    color: #FFF;
-}
-
-.botao-perfil {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    background-color: #D2B48C;
-    color: #FFF;
-    transition: background-color 0.3s;
-}
-
-.botao-perfil:hover {
-    background-color: #C49A7D;
-}
-
-.botao-sair {
-    background-color: #B22222;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     margin-left: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .botao-sair:hover {
@@ -124,19 +121,3 @@
     opacity: 0.7;
 }
 
-.usuario-info {
-    display: flex;
-    align-items: center;
-    color: #FFF;
-    margin-left: 20px;
-}
-
-.usuario-simbolo {
-    font-size: 20px;
-    margin-right: 5px;
-}
-
-.usuario-nome {
-    font-weight: bold;
-    color: inherit;
-}
