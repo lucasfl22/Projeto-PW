@@ -97,39 +97,12 @@ CREATE TABLE interacoes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     post_id INT NOT NULL,
     usuario_id INT NOT NULL,
-    like_dislike ENUM('like', 'dislike') DEFAULT NULL,
+    like_dislike ENUM('like', 'dislike') DEFAULT NULL,          --- NÃO ESTÁ FUNCIONANDO ESSSA TABELA ---
     comentario TEXT DEFAULT NULL,
     data_interacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
-
-
---
--- Estrutura para tabela `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(100) NOT NULL UNIQUE,
-  `senha` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-
---
--- Despejando dados para a tabela `admin`
---
-
-INSERT INTO `admin` (`email`, `senha`) VALUES
-('adm4@gmail.com', '123456'),
-('administrador@outlook.com', '000000'),
-('suporte@gmail.com', '654321'),
-('gerente@site.com', 'senha123'),
-('moderador@site.com', 'mod456'),
-('supervisor@site.com', 'supervisor789'),
-('manager@site.com', 'manager2024'),
-('assistente@site.com', 'assistente321');
 
 
 
