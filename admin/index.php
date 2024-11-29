@@ -31,6 +31,7 @@ if ($_SESSION['acesso_admin'] != 1) {
     <link rel="stylesheet" href="../style/cria_post.css">
     <link rel="stylesheet" href="../style/bate-papo_filme.css">
     <link rel="stylesheet" href="../style/bate-papo_serie.css">
+    <link rel="stylesheet" href="style/estatisticas.css">
     <link rel="stylesheet" href="../style/bate-papo_livro.css">
     <link rel="stylesheet" href="../style/global.css">
 </head>
