@@ -2,8 +2,7 @@
 
 <?php
 
-    session_start();
-    include_once("../config.inc.php");
+    include_once("config.inc.php");
 
     $sql = mysqli_query($conexao,"SELECT * FROM usuarios "); // fazer um inner join para exibir o nome do usuário tbm
 
@@ -11,7 +10,7 @@
         echo "Usuário:  $tabela[id]     <br>";
         echo "Assunto:  $tabela[email] <br>";
 
-        echo "<a href='ad_exclui_user.php?id=$tabela[id]'><b>[X] Excluir</b></a> | ";
+        echo "<a href=admin/ad_exclui_user.php?id=$tabela[id]'><b>[X] Excluir</b></a> | ";
         } echo "<hr>";
 
     if(!$sql){

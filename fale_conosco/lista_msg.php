@@ -2,8 +2,7 @@
 
 <?php
 
-    session_start();
-    include_once("../config.inc.php");
+    include_once("config.inc.php");
 
     $sql = mysqli_query($conexao,"SELECT * FROM mensagem "); // fazer um inner join para exibir o nome do usuário tbm
 

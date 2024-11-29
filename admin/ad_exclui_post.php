@@ -12,7 +12,7 @@ $id =   $_REQUEST['id'];
 $sql = mysqli_query($conexao,"DELETE FROM posts WHERE id = $id");
 
 if ($sql) {
-    header("Location: ../index.php?pg=bate-papo/bate-papo_filme");
+    header("Location: ../index_admin.php?pg=bate-papo/lista_posts");
     mysqli_close($conexao);
     exit;
 }else {
