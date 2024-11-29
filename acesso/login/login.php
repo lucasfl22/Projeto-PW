@@ -32,6 +32,7 @@ if (mysqli_num_rows($query_login) > 0) {
         $_SESSION['nome_usuario'] = $dados_usuario['nome'];
         $_SESSION['email_usuario'] = $dados_usuario['email'];
         $_SESSION['data_cadastro'] = $dados_usuario['data_cadastro'];
+        $_SESSION['acesso_admin'] = $dados_usuario['acesso_admin'];
 
         header("Location: ../../index.php");
         mysqli_close($conexao);

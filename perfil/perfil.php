@@ -10,7 +10,13 @@ if (!logado()) {
 
 <section class="perfil">
     <div class="container">
-        <h1 class="titulo-perfil">Perfil de <span class="perfil-nome"><?php echo $_SESSION['nome_usuario']; ?></span></h1>
+        <h1 class="titulo-perfil">Perfil de <span class="perfil-nome"><?php 
+            echo $_SESSION['nome_usuario']; 
+            // Verifica se o usuário tem acesso administrativo
+            if (isset($_SESSION['acesso_admin']) && $_SESSION['acesso_admin'] == 1) {
+                echo " (admin)"; // Adiciona "(admin)" se o usuário for admin
+            }
+        ?></span></h1>
         
         <div class="informacoes-perfil">
             <h2>Informações Pessoais</h2>

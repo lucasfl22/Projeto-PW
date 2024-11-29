@@ -26,13 +26,17 @@ if (isset($_GET['cadastrado'])) {
 <?php } else if($cadastrado == '3') { ?>
     <h2 style='color: red;'>As senhas não correspondem!</h2>;
 
+<?php } else if($cadastrado == '4') { ?>
+    <h2 style='color: red;'>Chave de acesso inválida!</h2>;
+
 <?php }} ?>
 
     <form action="acesso/cadastro/cadastro.php" method="post">
         <input type="text" name="nome_usuario" id="nome_usuario" maxlength="50" placeholder="Nome" required>
         <input type="email" name="email_usuario" id="email_usuario" maxlength="50" placeholder="Email" required>
         <input type="password" name="senha_usuario" id="senha_usuario" maxlength="50" placeholder="Senha" required>
-        <input type="password" name="confirmar_senha_usuario" id="confirmar_senha_usuario" maxlength="50" placeholder="Confirmar Senha" required>   
+        <input type="password" name="confirmar_senha_usuario" id="confirmar_senha_usuario" maxlength="50" placeholder="Confirmar Senha" required>
+        <input type="text" name="chave_acesso" id="chave_acesso" maxlength="20" placeholder="Chave de Acesso (opcional)">
         <button type="submit">Cadastrar</button>
     </form>
 </div> 
