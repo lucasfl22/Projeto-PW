@@ -1,12 +1,6 @@
 <?php
 
     include_once("config.inc.php");
-    include_once("../acesso/sessao.php");
-
-    //só cria se estiver logado
-    if (!logado()) {
-        header("Location: ../index.php?pg=bate-papo/bate-papo_serie");
-    }
 
     $assunto = $_REQUEST['assunto'];
     $mensagem = $_REQUEST['mensagem'];

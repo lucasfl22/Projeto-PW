@@ -15,7 +15,7 @@
             <a href="index.php?pg=perfil/perfil_post&id=<?= $tabela['id'] ?>" class="perfil-link"><?= $tabela['nome'] ?></a>
             <br>
             <br>
-            <a href="fale_conosco/exclui_msg.php?id=<?= $tabela['id'] ?>"><b>[X] Excluir</b></a>     
+            <a href="admin/ad_exclui_user.php?id=<?= $tabela['id'] ?>"><b>[X] Excluir</b></a>     
             
             <hr class="hr-estilo">
         </div>
