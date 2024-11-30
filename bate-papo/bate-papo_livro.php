@@ -23,31 +23,7 @@ $query_livros = mysqli_query($conexao, $sql_livros);
                 <a href="crud/exclui_post.php?id=<?= $livro['id'] ?>&tipo=livro"><b>[X] Excluir</b></a> | 
                 <a href="index.php?pg=crud/form_edita_post&id=<?= $livro['id'] ?>&tipo=livro"><b>[V] Editar</b></a><br><br>
             <?php } ?> 
-
-            <!-- Likes e Dislikes -->
-            <form action="interagir.php" method="post">
-                <input type="hidden" name="post_id" value="<?= $livro['id'] ?>">
-                <button type="submit" name="acao" value="like">👍 Like</button>
-                <button type="submit" name="acao" value="dislike">👎 Dislike</button>
-            </form>
-
-            <!-- Comentários -->
-            <form action="comentar.php" method="post">
-                <input type="hidden" name="post_id" value="<?= $livro['id'] ?>">
-                <textarea name="comentario" placeholder="Deixe seu comentário..."></textarea>
-                <button type="submit">Comentar</button>
-            </form>
-
-            <!-- Exibir Comentários -->
-            <?php
-            $sql_comentarios = "SELECT * FROM interacoes WHERE post_id = {$livro['id']} AND comentario IS NOT NULL";
-            $query_comentarios = mysqli_query($conexao, $sql_comentarios);
-
-            while ($comentario = mysqli_fetch_array($query_comentarios)) {
-                echo "<p><strong>Usuário {$comentario['usuario_id']}:</strong> {$comentario['comentario']}</p>";
-            }
-            ?>
-
+            
             <hr class="hr-estilo">
         </div>
 

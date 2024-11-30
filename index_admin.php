@@ -26,7 +26,7 @@
         include_once("components/menu/menu_admin.php");
 
         if (empty($_SERVER["QUERY_STRING"])) {
-            $var = "components/conteudo/conteudo.php";
+            $var = "components/conteudo/conteudo_admin.php";
             include_once("$var");
         } else {
             $pg = $_GET['pg'];

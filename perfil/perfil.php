@@ -2,10 +2,6 @@
 include_once("config.inc.php");
 include_once("acesso/sessao.php");
 
-//Verifica se está logado
-if (!logado()) {
-    echo "<script>alert('Você não está logado!'); window.location.href = 'index.php?pg=acesso/login/form-login';</script>";
-}
 ?>
 
 <section class="perfil">

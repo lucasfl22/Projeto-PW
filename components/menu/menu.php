@@ -4,7 +4,6 @@
         <li><a href="?pg=bate-papo/bate-papo_filme">Veja Filmes</a></li>
         <li><a href="?pg=bate-papo/bate-papo_serie">Veja Séries</a></li>
         <li><a href="?pg=bate-papo/bate-papo_livro">Veja Livros</a></li>
-        <li><a href="#">Amizades</a></li>
     <?php if (logado()){ ?>         
         <li><a href="?pg=fale_conosco/form_envia_msg">Fale Conosco</button></a></li>
     <?php } else{ ?>

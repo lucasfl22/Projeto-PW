@@ -1,22 +1,25 @@
-<h1>Usuários Cadastrados</h1>
-
 <?php
 
     include_once("config.inc.php");
 
-    $sql = mysqli_query($conexao,"SELECT * FROM usuarios "); // fazer um inner join para exibir o nome do usuário tbm
+    $sql = mysqli_query($conexao,"SELECT * FROM usuarios "); ?>
 
-    while($tabela = mysqli_fetch_array($sql)){
-        echo "Usuário:  $tabela[id]     <br>";
-        echo "Assunto:  $tabela[email] <br>";
+    <div class="div">
+    <h2 class="bate-papo-title">Usuários Cadastrados</h2>
+    <?php while ($tabela = mysqli_fetch_array($sql)): ?>
+        <div class="postagem">
+            <h3><?= $tabela['nome'] ?></h3>
+            <p><strong>Email: </strong><?= $tabela['email'] ?></p>
+            <p><strong>Data de Cadastro: </strong><?= $tabela['data_cadastro'] ?></p>
+            <p><strong>Veja o perfil de </strong>
+            <a href="index.php?pg=perfil/perfil_post&id=<?= $tabela['id'] ?>" class="perfil-link"><?= $tabela['nome'] ?></a>
+            <br>
+            <br>
+            <a href="fale_conosco/exclui_msg.php?id=<?= $tabela['id'] ?>"><b>[X] Excluir</b></a>     
+            
+            <hr class="hr-estilo">
+        </div>
+    </div>
 
-        echo "<a href=admin/ad_exclui_user.php?id=$tabela[id]'><b>[X] Excluir</b></a> | ";
-        } echo "<hr>";
+    <?php endwhile; mysqli_close($conexao); ?>
 
-    if(!$sql){
-        echo "<h2>Não foi possível realizar as operações</h2>";
-    }
-
-    mysqli_close($conexao);
-
-?>

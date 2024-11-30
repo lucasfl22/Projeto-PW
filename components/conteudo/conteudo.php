@@ -55,7 +55,11 @@
             <div class="funcionalidade">
                 <h3>Seu Perfil Pessoal</h3>
                 <p>No seu perfil, acompanhe todas as suas publicações, visualize seu histórico de avaliações e interações, e veja as atividades dos seus amigos. Esse é o seu espaço exclusivo no CineBookly, onde você pode organizar e rever todas as suas experiências.</p>
-                <a href="?pg=perfil/perfil"><button class="botao">Ver meu perfil</button></a>
+                <?php if (logado()){ ?>         
+                    <a href="?pg=perfil/perfil"><button class="botao">Ver meu perfil</button></a>
+                <?php } else{ ?>
+                    <a href="?pg=acesso/login/form-login"><button class="botao">Ver meu perfil</button></a>
+                <?php } ?>
             </div>
         </div>
 

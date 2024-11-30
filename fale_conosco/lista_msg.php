@@ -1,23 +1,26 @@
-<h1>Mensagens</h1>
-
 <?php
 
     include_once("config.inc.php");
 
-    $sql = mysqli_query($conexao,"SELECT * FROM mensagem "); // fazer um inner join para exibir o nome do usuário tbm
+    $sql = mysqli_query($conexao, "SELECT * FROM mensagem 
+    INNER JOIN usuarios 
+    ON mensagem.usuario_id = usuarios.id 
+    ORDER BY mensagem.id DESC "); ?>
 
-    while($tabela = mysqli_fetch_array($sql)){
-        echo "Usuário:  $tabela[usuario_id]     <br>";
-        echo "Assunto:  $tabela[assunto] <br>";
-        echo "Mensagem: $tabela[mensagem]  <br>";
+    <div class="div">
+    <h2 class="bate-papo-title">Mensagens</h2>
+    <?php while ($tabela = mysqli_fetch_array($sql)): ?>
+        <div class="postagem">
+            <h3><?= $tabela['assunto'] ?></h3>
+            <p><strong>Mensagem: </strong><?= $tabela['mensagem'] ?></p>
+                <strong>Postado por: </strong>
+                <a href="index.php?pg=perfil/perfil_post&id=<?= $tabela['usuario_id'] ?>" class="perfil-link"><?= $tabela['nome'] ?></a>
+            </p>
+            <br>
+            <a href="fale_conosco/exclui_msg.php?id=<?= $tabela['id'] ?>"><b>[X] Excluir</b></a>     
+            
+            <hr class="hr-estilo">
+        </div>
+    </div>
 
-        echo "<a href='exclui_msg.php?id=$tabela[id]&tipo=filme'><b>[X] Excluir</b></a> | ";
-        } echo "<hr>";
-
-    if(!$sql){
-        echo "<h2>Não foi possível realizar as operações</h2>";
-    }
-
-    mysqli_close($conexao);
-
-?>
+    <?php endwhile; mysqli_close($conexao); ?>

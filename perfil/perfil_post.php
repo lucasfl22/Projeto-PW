@@ -2,11 +2,6 @@
 include_once("config.inc.php");
 include_once("acesso/sessao.php");
 
-//Verifica se está logado
-if (!logado()) {
-    echo "<script>alert('Você não está logado!'); window.location.href = 'index.php?pg=acesso/login/form-login';</script>";
-}
-
 // Verifica se o ID do usuário foi passado
 if (isset($_GET['id'])) {
     $usuario_id = intval($_GET['id']); // Converte para inteiro para segurança
@@ -42,7 +37,7 @@ if (isset($_GET['id'])) {
             <ul>
             <?php
                 // Consulta para buscar as publicações do usuário, incluindo o tipo
-                $usuario_id = $_SESSION['id_usuario'];
+                $usuario_id = $_GET['id'];
                 $sql_publicacoes = "SELECT titulo, comentario, avaliacao, tipo FROM posts WHERE usuario_id = $usuario_id";
                 $query_publicacoes = mysqli_query($conexao, $sql_publicacoes);
 
