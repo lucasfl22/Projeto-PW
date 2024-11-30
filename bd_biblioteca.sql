@@ -90,23 +90,6 @@ INSERT INTO `posts` (`tipo`, `titulo`, `comentario`, `avaliacao`, `usuario_id`) 
 
 
 --
--- Estrutura para tabela `interacoes`
---
-
-CREATE TABLE interacoes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    post_id INT NOT NULL,
-    usuario_id INT NOT NULL,
-    like_dislike ENUM('like', 'dislike') DEFAULT NULL,          --- NÃO ESTÁ FUNCIONANDO ESSSA TABELA ---
-    comentario TEXT DEFAULT NULL,
-    data_interacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
-);
-
-
-
---
 -- Estrutura para tabela `mensagem`
 --
 

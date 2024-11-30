@@ -28,43 +28,8 @@ $query_filmes = mysqli_query($conexao, $sql_filmes);
                 <a href="index.php?pg=crud/form_edita_post&id=<?= $filme['id'] ?>&tipo=filme"><b>[V] Editar</b></a><br><br>
             <?php } ?>
 
-            <!-- Likes e Dislikes -->
-            <div class="interacoes">
-                <button class="like-btn" data-post-id="<?= $filme['id'] ?>">👍 <?= $filme['likes'] ?></button>
-                <button class="dislike-btn" data-post-id="<?= $filme['id'] ?>">👎 <?= $filme['dislikes'] ?></button>
-            </div>
-
             <hr class="hr-estilo">
         </div>
 
     <?php endwhile; mysqli_close($conexao); ?>
 </div>
-
-<script>
-// Seu código JS aqui
-
-document.querySelectorAll('.like-btn, .dislike-btn').forEach(button => {
-    button.addEventListener('click', function () {
-        const postId = this.dataset.postId;
-        const action = this.classList.contains('like-btn') ? 'like' : 'dislike';
-
-        // Enviar requisição para o servidor
-        fetch('bate-papo/interagir.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: `post_id=${postId}&acao=${action}`
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                // Atualizar os botões com os novos valores
-                document.querySelector(`.like-btn[data-post-id="${postId}"]`).textContent = `👍 ${data.likes}`;
-                document.querySelector(`.dislike-btn[data-post-id="${postId}"]`).textContent = `👎 ${data.dislikes}`;
-            } else {
-                alert(data.message);
-            }
-        })
-        .catch(err => console.error('Erro ao processar a ação:', err));
-    });
-});
-</script>
