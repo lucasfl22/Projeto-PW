@@ -97,23 +97,6 @@ INSERT INTO `posts` (`tipo`, `titulo`, `comentario`, `avaliacao`, `usuario_id`) 
 ('filme', 'O Exorcista', 'Achei mais engraçado do que assustador. Não merece todo o reconhecimento.', 3.0, 4),
 ('serie', 'The Walking Dead', 'É sempre a mesma coisa. Encheção de linguiça.', 4.8, 9);
 
-
---
--- Estrutura para tabela `interacoes`
---
-
-CREATE TABLE interacoes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    post_id INT NOT NULL,
-    usuario_id INT NOT NULL,
-    like_dislike ENUM('like', 'dislike') DEFAULT NULL,
-    comentario TEXT DEFAULT NULL,
-    data_interacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
-);
-
-
 --
 -- Estrutura para tabela `admin`
 --
