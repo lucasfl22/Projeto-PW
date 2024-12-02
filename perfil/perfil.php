@@ -20,7 +20,7 @@ include_once("acesso/sessao.php");
                 <?php
                 // Consulta para buscar as publicações do usuário, incluindo o tipo
                 $usuario_id = $_SESSION['id_usuario'];
-                $sql_publicacoes = "SELECT titulo, comentario, avaliacao, tipo FROM posts WHERE usuario_id = $usuario_id";
+                $sql_publicacoes = "SELECT titulo, comentario, avaliacao, tipo FROM posts WHERE usuario_id = $usuario_id  ORDER BY id DESC";
                 $query_publicacoes = mysqli_query($conexao, $sql_publicacoes);
 
                 // Verifica se há publicações e exibe

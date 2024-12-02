@@ -38,7 +38,7 @@ if (isset($_GET['id'])) {
             <?php
                 // Consulta para buscar as publicações do usuário, incluindo o tipo
                 $usuario_id = $_GET['id'];
-                $sql_publicacoes = "SELECT titulo, comentario, avaliacao, tipo FROM posts WHERE usuario_id = $usuario_id";
+                $sql_publicacoes = "SELECT titulo, comentario, avaliacao, tipo FROM posts WHERE usuario_id = $usuario_id  ORDER BY id DESC";
                 $query_publicacoes = mysqli_query($conexao, $sql_publicacoes);
 
                 // Verifica se há publicações e exibe
