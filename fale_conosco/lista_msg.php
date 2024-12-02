@@ -16,8 +16,7 @@
             <p><strong>Escrita por: </strong>
             <a href="index.php?pg=perfil/perfil_post&id=<?= $tabela['id'] ?>" class="perfil-link"><?= $tabela['nome'] ?></a>
             <br>
-            <br>
-            <a href="fale_conosco/exclui_msg.php?id=<?= $tabela['id'] ?>"><b>[X] Excluir</b></a>     
+            <br>    
             
             <hr class="hr-estilo">
         </div>
