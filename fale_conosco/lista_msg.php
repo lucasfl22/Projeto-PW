@@ -14,7 +14,7 @@
             <h3><?= $tabela['assunto'] ?></h3>
             <p><strong>Mensagem </strong><?= $tabela['mensagem'] ?></p>
             <p><strong>Escrita por: </strong>
-            <a href="index.php?pg=perfil/perfil_post&id=<?= $tabela['id'] ?>" class="perfil-link"><?= $tabela['nome'] ?></a>
+            <a href="index_admin.php?pg=perfil/perfil_post&id=<?= $tabela['id'] ?>" class="perfil-link"><?= $tabela['nome'] ?></a>
             <br>
             <br>    
             

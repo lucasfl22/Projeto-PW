@@ -14,7 +14,7 @@ $query = mysqli_query($conexao, $sql); ?>
             <p><strong>Nota: </strong><?= $posts['avaliacao'] ?></p>
             <p>
                 <strong>Postado por: </strong>
-                <a href="index.php?pg=perfil/perfil_post&id=<?= $posts['usuario_id'] ?>" class="perfil-link"><?= $posts['nome_usuario'] ?></a>
+                <a href="index_admin.php?pg=perfil/perfil_post&id=<?= $posts['usuario_id'] ?>" class="perfil-link"><?= $posts['nome_usuario'] ?></a>
             </p>
                 <a href="admin/ad_exclui_post.php?id=<?= $posts['id'] ?>"><b>[X] Excluir</b></a>
 

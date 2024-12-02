@@ -12,7 +12,7 @@
             <p><strong>Email: </strong><?= $tabela['email'] ?></p>
             <p><strong>Data de Cadastro: </strong><?= $tabela['data_cadastro'] ?></p>
             <p><strong>Veja o perfil de </strong>
-            <a href="index.php?pg=perfil/perfil_post&id=<?= $tabela['id'] ?>" class="perfil-link"><?= $tabela['nome'] ?></a>
+            <a href="index_admin.php?pg=perfil/perfil_post&id=<?= $tabela['id'] ?>" class="perfil-link"><?= $tabela['nome'] ?></a>
             <br>
             <br>
             <a href="admin/ad_exclui_user.php?id=<?= $tabela['id'] ?>"><b>[X] Excluir</b></a>     
