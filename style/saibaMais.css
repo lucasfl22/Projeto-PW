@@ -1,0 +1,66 @@
+.div-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.professor {
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 0;
+}
+
+.texto-professor {
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.texto-professor h1 {
+    color: rgb(195, 0, 255);
+    text-shadow: 2px 2px 5px gray;
+}
+
+.texto-professor h2 {
+    color: rgb(62, 0, 143);
+    margin: 10px 20px;
+}
+
+.texto-professor h3 {
+    color: green;
+    font-style: italic;
+    margin: 20px 20px;
+}
+
+.agradecimento {
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    color: purple;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    background-color: #f9f2ff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.assinatura {
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    padding: 10px 0;
+    background-color: #f0f8ff;
+    border-top: 2px solid #dcdcdc;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.assinatura p {
+    margin: 0;
+    font-weight: bold;
+    color: #ff4500;
+}
