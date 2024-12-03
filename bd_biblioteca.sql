@@ -23,17 +23,23 @@ CREATE TABLE usuarios (
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO usuarios (nome, email, senha, acesso_admin) VALUES
-('Ana Silva', 'ana.silva@gmail.com', 'senhaAna123', 0),
-('Bruno Costa', 'bruno.costa@gmail.com', 'senhaBruno456', 0),
-('Carla Mendes', 'carla.mendes@gmail.com', 'senhaCarla789', 0),
-('Daniel Oliveira', 'daniel.oliveira@gmail.com', 'senhaDaniel321', 0),
-('Eduarda Lima', 'eduarda.lima@gmail.com', 'senhaEduarda654', 0),
-('Felipe Santos', 'felipe.santos@gmail.com', 'senhaFelipe987', 0),
-('Gabriela Rocha', 'gabriela.rocha@gmail.com', 'senhaGabriela159', 0),
-('Henrique Almeida', 'henrique.almeida@gmail.com', 'senhaHenrique753', 0),
-('Isabela Ferreira', 'isabela.ferreira@gmail.com', 'senhaIsabela852', 0),
-('João Pedro', 'joao.pedro@gmail.com', 'senhaJoao456', 0);
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
+(1, 'Calebe', 'calebearcilio@gmail.com', '12345'),
+(3, 'Calebe2', 'calebeawrcilio@gmail.com', '1231'),
+(4, 'Calebe3', 'calebear231cilio@gmail.com', '12345'),
+(5, 'Calebe34', 'cal23ebearcilio@gmail.com', '12324354676'),
+(9, 'Joaquim', 'joaquim@gmail.com', '1234'),
+(10, 'chico', 'chico@gmail.com', 'chico'),
+(11, 'Ana Silva', 'ana.silva@gmail.com', 'ana123'),
+(12, 'Carlos Pereira', 'carlos.pereira@hotmail.com', 'carlos456'),
+(13, 'Maria Oliveira', 'maria.oliveira@yahoo.com', 'maria789'),
+(14, 'Luiz Fernando', 'luiz.fernando@gmail.com', 'luiz000'),
+(15, 'Gabriel Souza', 'gabriel.souza@outlook.com', 'gabriel321'),
+(16, 'Juliana Costa', 'juliana.costa@uol.com.br', 'juliana111'),
+(17, 'Fernando Almeida', 'fernando.almeida@gmail.com', 'fernando222'),
+(18, 'Beatriz Lima', 'beatriz.lima@bol.com.br', 'beatriz333'),
+(19, 'Roberta Rocha', 'roberta.rocha@gmail.com', 'roberta444'),
+(20, 'Marcelo Santos', 'marcelo.santos@hotmail.com', 'marcelo555');
 
 --
 -- Estrutura para tabela `posts`
