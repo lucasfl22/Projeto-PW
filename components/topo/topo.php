@@ -1,7 +1,7 @@
 <div class="topo-biblioteca">
-    <img src="img/CB.png" alt="Logo CineBookly" class="logo-img">
+    <a href="?pg=components/conteudo/conteudo"><img src="img/CB.png" alt="Logo CineBookly" class="logo-img"></a>
     <div class="logo">
-        <h1>CineBookly</h1>
+         <a href="?pg=components/conteudo/conteudo"><h1>CineBookly</h1></a>   
     </div>
     <?php include_once("acesso/sessao.php");
     if (logado()): ?>

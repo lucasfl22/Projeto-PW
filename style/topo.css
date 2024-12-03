@@ -24,6 +24,10 @@
     margin-left: 130px; /* Ajuste de alinhamento */
 }
 
+.logo a {
+    text-decoration: none;
+}
+
 .logo h1 {
     font-size: 36px;
     font-weight: bold;
