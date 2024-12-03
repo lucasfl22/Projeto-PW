@@ -8,7 +8,7 @@
     if (logado()): ?>
         <div class="usuario-info">
             <span class="usuario-nome"><?= $_SESSION['nome_usuario'] ?></span>
-            <a href="../index.php" class="botao-sair">Sair</a>
+            <a href="../index.php" class="botao-sair">Voltar para o site</a>
         </div>
     <?php else: ?>
         <div class="botoes">
