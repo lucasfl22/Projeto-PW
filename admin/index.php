@@ -29,32 +29,30 @@ if ($_SESSION['acesso_admin'] != 1) {
     <link rel="stylesheet" href="../style/cadastro.css">
     <link rel="stylesheet" href="../style/perfil.css">
     <link rel="stylesheet" href="../style/cria_post.css">
+    <link rel="stylesheet" href="style/lista_posts.css">
     <link rel="stylesheet" href="../style/bate-papo_filme.css">
     <link rel="stylesheet" href="../style/bate-papo_serie.css">
     <link rel="stylesheet" href="style/estatisticas.css">
+    <link rel="stylesheet" href="style/acao_posts.css">
     <link rel="stylesheet" href="../style/bate-papo_livro.css">
     <link rel="stylesheet" href="../style/global.css">
 </head>
 <body>
     <?php 
-        include_once("components/topo.php");
-        include_once("components/menu.php");
 
-        if (empty($_SERVER["QUERY_STRING"])) {
-            $var = "components/conteudo.php";
-            include_once($var);
-        } else {
-            $pg = basename($_GET['pg']);
-            $path = "components/$pg.php";
+    include_once("components/topo.php");
+    include_once("components/menu.php");
 
-            if (file_exists($path)) {
-                include_once($path);
-            } else {
-                echo "<h2>Página não encontrada.</h2>";
-            }
-        }
+    if (empty($_SERVER["QUERY_STRING"])) {
+        $var = "components/conteudo.php";
+        include_once("$var");
+    } else {
+        $pg = $_GET['pg'];
+        include_once("$pg.php");
+    }
 
-        include_once("components/rodape.php");
+    include_once("components/rodape.php");
+
     ?> 
 </body>
 </html>

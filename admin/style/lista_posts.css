@@ -1,0 +1,29 @@
+.menu-botoes {
+    text-align: center;
+    padding: 50px;
+    background-color: #FFF8E1;
+}
+
+.menu-botoes h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #8B4513;
+    margin-bottom: 30px;
+}
+
+.menu-botoes button {
+    background-color: #D2B48C;
+    color: #FFF;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-botoes button:hover {
+    background-color: #FF6347;
+    transform: scale(1.05);
+}
