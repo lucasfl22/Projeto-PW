@@ -135,6 +135,10 @@ INSERT INTO mensagem (nome, email, telefone, tipo_mensagem, mensagem, usuario_id
 ('Mariana Ferreira', 'mariana.ferreira@example.com', '369147258', 'sugestao', 'Acho que seria interessante adicionar uma funcionalidade de "seguindo" para acompanhar usuários específicos.', 10),
 ('Eduardo Almeida', 'eduardo.almeida@example.com', '951753258', 'denuncia', 'O site não está funcionando bem no celular, as páginas ficam desformatadas e difícil de ler.', 11);
 
+--
+-- Tabela de amizades
+--
+
 CREATE TABLE amizades (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
