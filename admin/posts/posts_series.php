@@ -17,6 +17,10 @@ $query_series = mysqli_query($conexao, $sql_series);
             <p><strong>Comentário: </strong><?= $serie['comentario'] ?></p>
             <p><strong>Nota: </strong><?= $serie['avaliacao'] ?></p>
             <p><strong>Postado por: </strong><?= $serie['nome_usuario'] ?></p>
+            <form method="post" action="posts/excluir_post.php">
+                <input type="hidden" name="post_id" value="<?= $serie['id'] ?>">
+                <button type="submit" class="delete-btn">Excluir</button>
+            </form>
         </div>
     <?php endwhile; ?>
 </div>

@@ -17,6 +17,10 @@ $query_livros = mysqli_query($conexao, $sql_livros);
             <p><strong>Comentário: </strong><?= $livro['comentario'] ?></p>
             <p><strong>Nota: </strong><?= $livro['avaliacao'] ?></p>
             <p><strong>Postado por: </strong><?= $livro['nome_usuario'] ?></p>
+            <form method="post" action="posts/excluir_post.php">
+                <input type="hidden" name="post_id" value="<?= $livro['id'] ?>">
+                <button type="submit" class="delete-btn">Excluir</button>
+            </form>
         </div>
     <?php endwhile; ?>
 </div>
