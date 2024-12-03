@@ -2,7 +2,7 @@
 include_once("config.inc.php");
 include_once("acesso/sessao.php");
 
-//Verifica se está logado
+// Verifica se está logado
 if (!logado()) {
     echo "<script>alert('Você não está logado!'); window.location.href = 'index.php?pg=acesso/login/form-login';</script>";
 }
@@ -41,8 +41,7 @@ if (isset($_GET['id'])) {
             <h2>Publicações Recentes</h2>
             <ul>
             <?php
-                // Consulta para buscar as publicações do usuário, incluindo o tipo
-                $usuario_id = $_SESSION['id_usuario'];
+                // Agora, usando $usuario_id para buscar as postagens do usuário
                 $sql_publicacoes = "SELECT titulo, comentario, avaliacao, tipo FROM posts WHERE usuario_id = $usuario_id";
                 $query_publicacoes = mysqli_query($conexao, $sql_publicacoes);
 
@@ -66,7 +65,7 @@ if (isset($_GET['id'])) {
                         echo "<a href='{$url_publicacao}' class='btn-publicacao'>Veja a Publicação</a><br><hr>";
                     }
                 } else {
-                    echo "<li>Você ainda não fez nenhuma publicação.</li>";
+                    echo "<li>Este usuário ainda não fez nenhuma publicação.</li>";
                 }
 
                 mysqli_close($conexao);
