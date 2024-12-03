@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="style/cadastro.css">
     <link rel="stylesheet" href="style/perfil.css">
     <link rel="stylesheet" href="style/cria_post.css">
+    <link rel="stylesheet" href="style/amizade.css">
     <link rel="stylesheet" href="style/bate-papo_filme.css">
     <link rel="stylesheet" href="style/bate-papo_serie.css">
     <link rel="stylesheet" href="style/bate-papo_livro.css">

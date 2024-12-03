@@ -134,3 +134,12 @@ INSERT INTO mensagem (nome, email, telefone, tipo_mensagem, mensagem, usuario_id
 ('Julio Cesar', 'julio.cesar@example.com', '258369147', 'denuncia', 'O site está muito pesado. A página de vídeos leva uma eternidade para carregar.', 12),
 ('Mariana Ferreira', 'mariana.ferreira@example.com', '369147258', 'sugestao', 'Acho que seria interessante adicionar uma funcionalidade de "seguindo" para acompanhar usuários específicos.', 10),
 ('Eduardo Almeida', 'eduardo.almeida@example.com', '951753258', 'denuncia', 'O site não está funcionando bem no celular, as páginas ficam desformatadas e difícil de ler.', 11);
+
+CREATE TABLE amizades (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    amigo_id INT NOT NULL,
+    status ENUM('pendente', 'aceito') NOT NULL DEFAULT 'pendente',
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    FOREIGN KEY (amigo_id) REFERENCES usuarios(id)
+);

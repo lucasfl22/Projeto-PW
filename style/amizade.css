@@ -1,0 +1,87 @@
+.containerr {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Alinhar as seções lado a lado usando flexbox */
+.amigos, .solicitacoes, .formulario {
+    margin-bottom: 30px;
+    background-color: #FFF8E1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.amigos {
+    flex: 1 1 30%; /* Tamanho da seção de amigos (30% da largura) */
+}
+
+.solicitacoes {
+    flex: 1 1 40%; /* Tamanho da seção de solicitações (40% da largura) */
+}
+
+.formulario {
+    flex: 1 1 25%; /* Tamanho da seção do formulário (25% da largura) */
+}
+
+/* Exibindo amigos e solicitações de amizade */
+.amigo-item, .solicitacao-item {
+    background-color: #FFF8E1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-text, .input-submit, .button-aceitar, .button-recusar {
+    padding: 10px;
+    border: 1px solid #D2B48C;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-text {
+    flex: 1;
+}
+
+.input-submit, .button-aceitar, .button-recusar {
+    background-color: #8B4513;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-submit:hover, .button-aceitar:hover, .button-recusar:hover {
+    background-color: #A0522D;
+}
+
+.button-aceitar {
+    margin-right: 10px;
+}
+
+.button-recusar {
+    margin-right: 0;
+}
+
+/* Ajustes no layout para telas menores */
+@media (max-width: 1200px) {
+    .container {
+        padding: 15px;
+    }
+
+    .amigos, .solicitacoes, .formulario {
+        flex: 1 1 100%; /* Fica em formato de coluna nas telas pequenas */
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .formulario .input-submit {
+        align-self: flex-start;
+    }
+}
