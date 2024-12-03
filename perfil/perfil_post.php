@@ -51,11 +51,11 @@ if (isset($_GET['id'])) {
                         // Define a URL com base no tipo da publicação
                         $url_publicacao = '';
                         if ($publicacao['tipo'] === 'filme') {
-                            $url_publicacao = 'http://localhost/projetopw/index.php?pg=bate-papo/bate-papo_filme';
+                            $url_publicacao = 'index.php?pg=bate-papo/bate-papo_filme';
                         } elseif ($publicacao['tipo'] === 'serie') {
-                            $url_publicacao = 'http://localhost/projetopw/index.php?pg=bate-papo/bate-papo_serie'; // Exemplo para série
+                            $url_publicacao = 'index.php?pg=bate-papo/bate-papo_serie'; // Exemplo para série
                         } elseif ($publicacao['tipo'] === 'livro') {
-                            $url_publicacao = 'http://localhost/projetopw/index.php?pg=bate-papo/bate-papo_livro'; // Exemplo para livro
+                            $url_publicacao = 'index.php?pg=bate-papo/bate-papo_livro'; // Exemplo para livro
                         }
 
                         echo "<li><strong>Título:</strong> {$publicacao['titulo']}<br>";
